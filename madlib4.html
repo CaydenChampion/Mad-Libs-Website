@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>The Mystery</title>
+</head>
+<body>
+
+    <h1>Random Mystery Story Generator</h1>
+    <p>Fill in the blanks to create your own mystery story!</p>
+
+    <form id="madlibForm">
+        <label>Adjective:</label>
+        <input type="text" id="adjective1" required><br><br>
+
+        <label>Noun (living thing):</label>
+        <input type="text" id="noun1" required><br><br>
+
+        <label>Verb (past tense):</label>
+        <input type="text" id="verb1" required><br><br>
+
+        <label>Adjective:</label>
+        <input type="text" id="adjective2" required><br><br>
+
+        <label>Noun:</label>
+        <input type="text" id="noun2" required><br><br>
+
+        <button type="submit">Generate Story</button>
+    </form>
+
+    <h2>Your Random Story:</h2>
+    <p id="storyOutput"></p>
+
+<script>
+document.getElementById("madlibForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent page refresh
+
+    const adjective1 = document.getElementById("adjective1").value;
+    const noun1 = document.getElementById("noun1").value;
+    const verb1 = document.getElementById("verb1").value;
+    const adjective2 = document.getElementById("adjective2").value;
+    const noun2 = document.getElementById("noun2").value;
+
+    const stories = [
+
+/* 🕵️ Detective Noir */
+`Rain poured over the city as the ${adjective1} ${noun1} ${verb1} under a flickering streetlight. 
+I’d seen a lot of strange things in my time, but nothing quite so ${adjective1}. 
+Then a ${adjective2} ${noun2} landed on my desk — no return address, no explanation. 
+In this town, nothing is ever just a coincidence.`,
+
+/*Sci-Fi */
+`On Planet Xeron, the ${adjective1} ${noun1} suddenly ${verb1}, sending shockwaves through the galaxy. 
+Scientists scanned the skies in disbelief. 
+Moments later, a ${adjective2} ${noun2} materialized in orbit, glowing brighter than a thousand stars. 
+Humanity had officially entered a new era.`,
+
+/*Fantasy */
+`Long ago, in a kingdom ruled by dragons, a ${adjective1} ${noun1} ${verb1} before the royal court. 
+Gasps echoed through the castle halls. 
+From the ancient vault emerged a ${adjective2} ${noun2}, humming with forgotten magic. 
+Prophecies whispered that this day would change everything.`,
+
+/*Comedy */
+`Nobody expected the ${adjective1} ${noun1} to ${verb1} during the annual pie-eating contest. 
+The crowd froze mid-cheer. 
+Then a ${adjective2} ${noun2} rolled across the stage and knocked over the mayor. 
+To this day, no one agrees on what actually happened.`,
+
+/*Horror */
+`The cabin was silent until the ${adjective1} ${noun1} ${verb1} in the attic. 
+Dust fell from the ceiling. The lights flickered. 
+Hidden beneath the floorboards was a ${adjective2} ${noun2}, cold to the touch. 
+Some doors, once opened, should never be closed again.`,
+
+/*School Drama */
+`During third period, the ${adjective1} ${noun1} suddenly ${verb1} in the middle of class. 
+Everyone stared. Even the teacher dropped the chalk. 
+Later that day, a ${adjective2} ${noun2} appeared in someone’s locker. 
+By lunchtime, the entire school was buzzing with theories.`,
+
+/* Pirate Adventure */
+`On the deck of the Black Barnacle, the ${adjective1} ${noun1} ${verb1} as thunder cracked overhead. 
+The crew fell silent. 
+Buried beneath the captain’s quarters lay a ${adjective2} ${noun2}, said to curse any who touched it. 
+Some treasures are better left lost.`
+/*Stories are curtasy of AI-generated creativity and may not make perfect sense, but they sure are fun! :) */
+    ];
+
+    const randomIndex = Math.floor(Math.random() * stories.length);
+    const randomStory = stories[randomIndex];
+
+    document.getElementById("storyOutput").innerText = randomStory;
+});
+</script>
+
+</body>
+</html>

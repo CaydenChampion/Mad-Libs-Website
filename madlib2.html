@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Mystery</title>
+    </head>
+    <body>
+        <h1>The Mystery</h1>
+        <p>Fill in the blanks with the requested types of words to create your own mystery story!</p>
+        <form id="madlibForm">
+            <label for="adjective1">Adjective:</label>
+            <input type="text" id="adjective1" name="adjective1" required><br><br>
+
+            <label for="noun1">Noun (living thing):</label>
+            <input type="text" id="noun1" name="noun1" required><br><br>
+
+            <label for="verb1">Verb (past tense):</label>
+            <input type="text" id="verb1" name="verb1" required><br><br>
+
+            <label for="adjective2">Adjective:</label>
+            <input type="text" id="adjective2" name="adjective2" required><br><br>
+
+            <label for="noun2">Noun:</label>
+            <input type="text" id="noun2" name="noun2" required><br><br>
+
+            <button type="button" onclick="generateStory()">Generate Story</button>
+        </form>
+
+        <h2>Your Mystery Story:</h2>
+        <p id="storyOutput"></p>
+
+        <script>
+            function generateStory() {
+                const adjective1 = document.getElementById('adjective1').value;
+                const noun1 = document.getElementById('noun1').value;
+                const verb1 = document.getElementById('verb1').value;
+                const adjective2 = document.getElementById('adjective2').value;
+                const noun2 = document.getElementById('noun2').value;
+
+                const story = `It was a dark and stormy night when the ${adjective1} ${noun1} suddenly ${verb1}. 
+No one in town expected something so ${adjective1} to happen, especially not at that hour. 
+Whispers spread quickly, and before long, everyone was searching for answers.
+
+As the wind howled through the empty streets, a ${adjective2} ${noun2} was discovered lying near the old clock tower. 
+The ${noun2} seemed far too ${adjective2} to be ordinary, and its presence only deepened the mystery. 
+Had the ${noun1} somehow caused this? Or was something far more ${adjective2} at work?
+
+By sunrise, the truth was still hidden — and the town would never look at the ${noun1} the same way again.`;
+
+                document.getElementById('storyOutput').innerText = story;
+            }
+        </script>
+    </body>
+</html>
